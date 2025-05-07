@@ -1,0 +1,31 @@
+# 5️⃣ AWS S3 Setup
+
+### ✅ Step-by-Step Guide to Create an S3 Bucket and Folder
+
+---
+
+### 🔹 Step 1: Access AWS S3
+- Log into the [AWS Console](https://console.aws.amazon.com/).
+- In the search bar, type **S3** and click to open it.
+
+---
+
+### 🔹 Step 2: Create a New S3 Bucket
+- Click the **Create bucket** button.
+- Enter a **unique bucket name** (e.g., `scd1-data-bucket`).
+- Leave other settings as default and click **Create bucket**.
+
+✅ You should see a success message indicating your bucket has been created.
+
+---
+
+### 🔹 Step 3: Create a Folder in the Bucket
+- Click on your newly created bucket to open it.
+- Click the **Create folder** button.
+- Enter a **folder name** (e.g., `raw-data/`) and click **Create folder**.
+
+✅ Your folder is now ready to store files that will be used in the SCD1 ETL pipeline.
+
+---
+
+🚀 You’ve successfully created an S3 bucket and folder to store your project’s data!
