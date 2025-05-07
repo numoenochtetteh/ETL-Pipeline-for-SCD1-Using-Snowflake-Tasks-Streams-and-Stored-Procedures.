@@ -1,51 +1,52 @@
-1️⃣ Snowflake Account Setup
-Step 1: Sign Up for Snowflake
-Visit the Snowflake Website:
+# 1️⃣ Snowflake Account Setup
+
+### Step 1: Sign Up for Snowflake
+
+**Visit the Snowflake Website:**  
 Go to Snowflake's official website.
 
-Click “Get Started”:
+**Click “Get Started”:**  
 On the homepage, click the “Get Started” button.
 
-Choose the Snowflake Edition:
+**Choose the Snowflake Edition:**  
+- Select **Free Trial** if you're learning or testing.
+- For production or commercial use, choose an appropriate edition (e.g., Standard, Enterprise).
 
-Select Free Trial if you're learning or testing.
+**Fill Out Your Information:**  
+- Enter basic details such as your **name**, **company name**, **email address**, and **phone number** (optional).  
+- Click **Submit**.
 
-For production or commercial use, choose an appropriate edition (e.g., Standard, Enterprise).
-
-Fill Out Your Information:
-
-Enter basic details such as your name, company name, email address, and phone number (optional).
-
-Click Submit.
-
-Email Verification:
+**Email Verification:**  
 After you submit your details, you’ll receive a verification email. Click the link in the email to verify your account.
 
-Step 2: Create Your Snowflake Account
-Choose Your Cloud Provider:
+---
 
-Select the cloud provider (AWS, Azure, or Google Cloud) and the region (e.g., AWS US West) where your Snowflake instance will be hosted.
+### Step 2: Create Your Snowflake Account
 
-Create an Account Name:
+**Choose Your Cloud Provider:**  
+- Select the **cloud provider** (AWS, Azure, or Google Cloud) and the **region** (e.g., AWS US West) where your Snowflake instance will be hosted.
 
-Choose a unique account name (e.g., your_account_name.snowflakecomputing.com).
+**Create an Account Name:**  
+- Choose a unique **account name** (e.g., `your_account_name.snowflakecomputing.com`).
 
-Set Admin Credentials:
+**Set Admin Credentials:**  
+- Create an **admin username** (e.g., `admin`) and a strong **password**.  
+- Confirm your password and click **Create Account**.
 
-Create an admin username (e.g., admin) and a strong password.
+---
 
-Confirm your password and click Create Account.
+### Step 3: Access Snowflake Web UI
 
-Step 3: Access Snowflake Web UI
-Login to Snowflake:
-After the account is created, you’ll receive a confirmation email. Follow the link to access the Snowflake Web UI (e.g., your_account_name.snowflakecomputing.com).
+**Login to Snowflake:**  
+After the account is created, you’ll receive a confirmation email. Follow the link to access the Snowflake Web UI (e.g., `your_account_name.snowflakecomputing.com`).
 
-Login with Admin Credentials:
-Log in with the admin username and the password you just created.
+**Login with Admin Credentials:**  
+Log in with the **admin username** and the **password** you just created.
 
-Step 4: Set Up Multi-Factor Authentication (MFA) (Optional)
-Enable MFA for Added Security:
+---
 
-Snowflake may prompt you to enable MFA for additional security.
+### Step 4: Set Up Multi-Factor Authentication (MFA) (Optional)
 
-Choose email-based or authentication app (like Google Authenticator).
+**Enable MFA for Added Security:**  
+- Snowflake may prompt you to enable **MFA** for additional security.
+- Choose **email-based** or an **authentication app** (like Google Authenticator).
