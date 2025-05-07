@@ -1,0 +1,8 @@
+📜 DESCRIPTION: Snowflake Stream Setup
+In this step, we are setting up a Snowflake Stream on the CUSTOMER_SOURCE table.
+A stream is a Snowflake object that enables change data capture (CDC) — it keeps track of inserted, updated, or deleted rows in a table.
+
+We’re using the APPEND_ONLY = TRUE setting, which means the stream will only track inserted rows and ignore updates or deletes. This is ideal for simple ETL flows where only new data is ingested into the pipeline.
+
+After creating the stream, we also validate it by running a SELECT query to check if any new rows have been captured since its creation.
+
