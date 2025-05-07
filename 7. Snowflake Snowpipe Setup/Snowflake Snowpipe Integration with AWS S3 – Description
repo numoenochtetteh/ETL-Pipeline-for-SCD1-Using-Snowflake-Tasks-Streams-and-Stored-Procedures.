@@ -1,0 +1,39 @@
+Snowflake Snowpipe Integration with AWS S3 – Description
+Overview:
+Snowpipe is a Snowflake feature that enables continuous data ingestion from files stored in cloud storage, like AWS S3, into Snowflake tables. It provides automated, near real-time loading of data, making it ideal for streaming or frequently updated datasets.
+
+Purpose:
+To automatically load new CSV files uploaded to an AWS S3 bucket into a Snowflake table without manual intervention.
+
+Workflow Summary:
+Create a Table: A Snowflake table (CUSTOMER_SOURCE) is created to store incoming customer data from CSV files.
+
+Create a Stage: A stage (SCD1_STAGE) is already set up in Snowflake pointing to the correct S3 bucket and folder where files will land.
+
+Create a Snowpipe:
+
+The pipe uses the COPY INTO command to ingest data from the S3 stage into the CUSTOMER_SOURCE table.
+
+AUTO_INGEST = TRUE allows Snowpipe to automatically ingest files when they're uploaded to the S3 bucket.
+
+Set Up Event Notification:
+
+An event notification is configured in AWS S3 to trigger when a file is uploaded to the bucket.
+
+This event is sent to an SQS Queue, whose ARN is connected to the Snowpipe via the notification_channel.
+
+Snowpipe Trigger:
+
+When a file lands in the S3 folder, S3 sends a message to the SQS queue.
+
+Snowflake listens to the SQS queue and automatically triggers Snowpipe to ingest the new data into the table.
+
+Benefits:
+Real-time data loading without scheduled ETL jobs.
+
+Fully managed and serverless—no infrastructure to manage.
+
+Handles structured data formats like CSV, JSON, Parquet.
+
+Scalable and event-driven—ideal for high-volume environments.
+
