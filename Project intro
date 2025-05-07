@@ -1,56 +1,100 @@
-📌 Project Introduction
-This project demonstrates how to build a fully automated ETL pipeline to implement Slowly Changing Dimension Type 1 (SCD1) using Snowflake’s advanced features such as Streams, Tasks, and Stored Procedures, along with data ingestion from AWS S3.
 
-The project mimics a near real-time data pipeline where raw data is ingested from AWS S3, automatically loaded into Snowflake using Snowpipe, and then transformed using SQL logic to handle overwrites (SCD1) in a dimension table.
 
-This setup reflects a simplified but realistic version of what you might see in enterprise cloud data warehouse projects.
+# 🚀 ETL Pipeline for SCD1 Using Snowflake Tasks, Streams & Stored Procedures
 
-🔧 Project Setup & Components (All Completed)
-✅ Snowflake Account Setup
+---
 
-✅ AWS Account Setup
+## 📖 Project Overview
 
-✅ Anaconda Cloud Setup
+This project demonstrates how to build a **real-time ETL pipeline** that applies **Slowly Changing Dimension Type 1 (SCD1)** logic using:
 
-✅ AWS IAM User
+* 🧊 **Snowflake** — as the cloud data warehouse
+* ☁️ **AWS S3** — as the raw data storage
+* 🔄 **Snowpipe** — for automatic data ingestion
+* 📥 **Streams & Tasks** — to detect and automate changes
+* 📜 **Stored Procedures** — to apply SCD1 transformation logic
 
-✅ AWS S3 Bucket Setup
+The goal is to ingest data from AWS S3 into Snowflake and transform it to maintain the latest version of records in a dimension table.
 
-✅ AWS S3 ↔ Snowflake Integration
+---
 
-✅ Snowflake Snowpipe Setup
+## ✅ Project Setup (All Completed)
 
-✅ Snowflake Stream Setup
+### 🧊 Snowflake & AWS Configurations
 
-✅ Snowflake Task Setup
+* ✅ **[Snowflake Account Setup](#)**
+* ✅ **[AWS Account Setup](#)**
+* ✅ **[Anaconda Cloud Setup](#)**
+* ✅ **[AWS IAM User Configuration](#)**
+* ✅ **[AWS S3 Bucket Setup](#)**
 
-✅ Testing of SCD1 Logic
+### 🔗 Integrations & Pipeline Components
 
-(Replace # with actual URLs or section anchors if available.)
+* ✅ **[S3 ↔ Snowflake Integration](#)**
+* ✅ **[Snowpipe Setup](#)**
+* ✅ **[Stream Setup](#)**
+* ✅ **[Task Setup](#)**
+* ✅ **[Testing of SCD1 Logic](#)**
 
-🧭 Project Flow / Steps
-Here’s how the project is structured and executed:
+> *Replace `#` with actual links or headings once the README is complete.*
 
-Step 1: Snowflake and AWS Setup
-Set up all the required accounts (Snowflake, AWS, Anaconda) and configure IAM roles and policies for secure access between Snowflake and S3.
+---
 
-Step 2: Create AWS S3 Bucket
-Upload raw CSV or JSON data files that simulate new incoming records from a data source.
+## 🧭 How the Project Works – Step-by-Step
 
-Step 3: Set Up Snowflake Stage & File Format
-Define an external stage in Snowflake pointing to the S3 bucket and configure the file format.
+### 1️⃣ Step 1: Setup Snowflake and AWS
 
-Step 4: Configure Snowpipe for Auto-Ingestion
-Create a Snowpipe that auto-loads data from S3 into a Snowflake landing table using event-based triggers.
+Create Snowflake and AWS accounts. Set up IAM roles and permissions to allow S3 ↔ Snowflake communication.
 
-Step 5: Set Up Snowflake Stream
-Create a stream on the landing table to track inserts/changes (CDC).
+---
 
-Step 6: Write Stored Procedure for SCD1 Logic
-Develop a stored procedure that compares stream data with the dimension table and updates existing records (SCD1 behavior).
+### 2️⃣ Step 2: Upload Raw Data to S3
 
-Step 7: Schedule with Snowflake Task
-Create a task that runs the stored procedure on a regular interval (e.g., every 5 minutes) to keep the dimension table updated.
+Upload raw data (CSV or JSON) to an S3 bucket, simulating a new data stream.
 
-Step 8: Test the Full Pipeline
-Upload new/updated data into S3, confirm that Snowpipe loads it, the stream captures it, and the task applies the SCD1 transformation correctly.
+---
+
+### 3️⃣ Step 3: Create Snowflake Stage & File Format
+
+Set up an external stage and file format to connect Snowflake with your S3 bucket.
+
+---
+
+### 4️⃣ Step 4: Build Snowpipe for Auto-Loading
+
+Use Snowpipe to automatically ingest files from S3 into a **landing table** in Snowflake.
+
+---
+
+### 5️⃣ Step 5: Create a Stream
+
+Set up a Stream to track new or changed records coming into the landing table.
+
+---
+
+### 6️⃣ Step 6: Write a Stored Procedure (SCD1 Logic)
+
+Create a stored procedure that:
+
+* Compares incoming rows with the target table
+* Updates existing rows if keys match
+* Inserts new records if no match is found
+
+---
+
+### 7️⃣ Step 7: Schedule with Snowflake Task
+
+Set up a Task to call the stored procedure at intervals (e.g., every 5 minutes), ensuring continuous updates.
+
+---
+
+### 8️⃣ Step 8: Testing the Full Pipeline
+
+Upload new data to S3 and verify the entire pipeline:
+
+* Snowpipe loads the data
+* Stream captures the changes
+* Task triggers the SCD1 logic
+* Dimension table reflects the latest values
+
+
