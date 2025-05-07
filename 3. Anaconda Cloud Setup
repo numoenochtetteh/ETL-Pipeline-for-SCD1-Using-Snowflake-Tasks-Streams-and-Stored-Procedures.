@@ -1,0 +1,48 @@
+# 3️⃣ Anaconda Cloud Setup
+
+### Step 1: Sign Up for Anaconda Cloud
+
+**Visit the Anaconda Website:**  
+Go to the official Anaconda website: [Anaconda](https://www.anaconda.com/).
+
+**Click “Sign Up”:**  
+On the homepage, click the **"Sign Up"** button located at the top right of the page.
+
+**Fill Out Your Information:**  
+- Enter your **email address**.
+- Choose a **username** and **password**.
+- Agree to the terms and conditions.
+- Click **"Sign Up"** to create your account.
+
+---
+
+### Step 2: Install Anaconda
+
+**Download Anaconda:**  
+Go to the [Anaconda Downloads page](https://www.anaconda.com/products/individual) and choose the version suitable for your operating system (Windows, macOS, or Linux).
+
+**Install Anaconda:**  
+- Run the installer after downloading it.
+- Follow the on-screen instructions to complete the installation.
+  - **Windows**: Make sure to check the option that adds Anaconda to your system's PATH during installation.
+  - **macOS/Linux**: Follow the terminal instructions to install Anaconda.
+
+---
+
+### Step 3: Access Anaconda Cloud
+
+**Login to Anaconda Cloud:**  
+After signing up for an account and installing Anaconda, you can access Anaconda Cloud by opening your browser and navigating to [Anaconda Cloud Login](https://anaconda.org/login).
+
+- Enter your **username** and **password** to log in.
+
+---
+
+### Step 4: Set Up Anaconda CLI (Command-Line Interface)
+
+**Install Anaconda CLI (if not already installed):**  
+- Open the terminal (macOS/Linux) or Anaconda Prompt (Windows).
+- Run the following command to make sure Anaconda is correctly installed:
+
+```bash
+conda --version
