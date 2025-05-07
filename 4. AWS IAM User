@@ -1,0 +1,54 @@
+# 4️⃣ AWS IAM User Setup
+
+### ✅ Step-by-Step Guide to Create IAM User with Access and Secret Key
+
+---
+
+### 🔹 Step 1: Open AWS IAM
+- Log into the [AWS Console](https://console.aws.amazon.com/).
+- In the search bar, type **IAM** and click to open it.
+
+---
+
+### 🔹 Step 2: Create a New IAM User
+- In the left sidebar, click **Users**.
+- Click the **Create user** button.
+- Enter a username (e.g., `scd1user`) and click **Next**.
+
+---
+
+### 🔹 Step 3: Set Permissions
+- Choose **Attach policies directly**.
+- Search for and select the policy:  
+  `AmazonS3FullAccess`
+- Click **Next**.
+
+---
+
+### 🔹 Step 4: Review and Create User
+- Review your user settings.
+- Click **Create user**.
+
+---
+
+### 🔹 Step 5: Generate Access Key
+- Click on the newly created user.
+- Go to the **Security credentials** tab.
+- Scroll to **Access keys** and click **Create access key**.
+
+---
+
+### 🔹 Step 6: Select Use Case
+- Choose **Command Line Interface (CLI)**.
+- Check the confirmation box and click **Next**.
+
+---
+
+### 🔹 Step 7: Download Credentials
+- Click **Create access key**.
+- Click **Download .csv file** (contains Access Key ID and Secret Access Key).
+- Save this file securely — you’ll use it in your project.
+
+---
+
+✅ **Done!** You now have an IAM user with access to interact with AWS S3 using your Python or Snowflake code.
