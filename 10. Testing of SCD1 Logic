@@ -1,0 +1,40 @@
+# SCD1 Logic Testing – Uploading Customer Data to S3
+
+# Step 1: Import necessary libraries
+import boto3
+import yaml
+
+# Step 2: Load AWS credentials from a YAML file
+with open('aws_credentials.yml', 'r') as file:
+    aws_credentials = yaml.safe_load(file)
+
+# Step 3: Extract individual values from the YAML content
+aws_access_key_id = aws_credentials['aws_access_key_id']
+aws_secret_access_key = aws_credentials['aws_secret_access_key']
+aws_region_name = aws_credentials['aws_region_name']
+
+# Step 4: Initialize a boto3 session using the credentials
+session = boto3.Session(
+    aws_access_key_id=aws_access_key_id,
+    aws_secret_access_key=aws_secret_access_key,
+    region_name=aws_region_name
+)
+
+# Step 5: Define the variables for upload
+file_name = 'customer_full_data.csv'   # or 'customer_change_data.csv'
+bucket_name = 'your-s3-bucket-name'    # replace with your actual bucket name
+folder_name = 'your-folder-name'       # replace with your actual folder name
+
+# Step 6: Create an S3 client using the session
+s3_client = session.client('s3')
+
+# Step 7: Upload the file to S3
+try:
+    s3_client.upload_file(
+        Filename=file_name,
+        Bucket=bucket_name,
+        Key=f"{folder_name}/{file_name}"
+    )
+    print(f"{file_name} is uploaded successfully")
+except Exception as e:
+    print(f"An error occurred: {e}")
