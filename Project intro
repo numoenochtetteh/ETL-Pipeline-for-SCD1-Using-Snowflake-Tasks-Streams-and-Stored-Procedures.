@@ -1,0 +1,56 @@
+📌 Project Introduction
+This project demonstrates how to build a fully automated ETL pipeline to implement Slowly Changing Dimension Type 1 (SCD1) using Snowflake’s advanced features such as Streams, Tasks, and Stored Procedures, along with data ingestion from AWS S3.
+
+The project mimics a near real-time data pipeline where raw data is ingested from AWS S3, automatically loaded into Snowflake using Snowpipe, and then transformed using SQL logic to handle overwrites (SCD1) in a dimension table.
+
+This setup reflects a simplified but realistic version of what you might see in enterprise cloud data warehouse projects.
+
+🔧 Project Setup & Components (All Completed)
+✅ Snowflake Account Setup
+
+✅ AWS Account Setup
+
+✅ Anaconda Cloud Setup
+
+✅ AWS IAM User
+
+✅ AWS S3 Bucket Setup
+
+✅ AWS S3 ↔ Snowflake Integration
+
+✅ Snowflake Snowpipe Setup
+
+✅ Snowflake Stream Setup
+
+✅ Snowflake Task Setup
+
+✅ Testing of SCD1 Logic
+
+(Replace # with actual URLs or section anchors if available.)
+
+🧭 Project Flow / Steps
+Here’s how the project is structured and executed:
+
+Step 1: Snowflake and AWS Setup
+Set up all the required accounts (Snowflake, AWS, Anaconda) and configure IAM roles and policies for secure access between Snowflake and S3.
+
+Step 2: Create AWS S3 Bucket
+Upload raw CSV or JSON data files that simulate new incoming records from a data source.
+
+Step 3: Set Up Snowflake Stage & File Format
+Define an external stage in Snowflake pointing to the S3 bucket and configure the file format.
+
+Step 4: Configure Snowpipe for Auto-Ingestion
+Create a Snowpipe that auto-loads data from S3 into a Snowflake landing table using event-based triggers.
+
+Step 5: Set Up Snowflake Stream
+Create a stream on the landing table to track inserts/changes (CDC).
+
+Step 6: Write Stored Procedure for SCD1 Logic
+Develop a stored procedure that compares stream data with the dimension table and updates existing records (SCD1 behavior).
+
+Step 7: Schedule with Snowflake Task
+Create a task that runs the stored procedure on a regular interval (e.g., every 5 minutes) to keep the dimension table updated.
+
+Step 8: Test the Full Pipeline
+Upload new/updated data into S3, confirm that Snowpipe loads it, the stream captures it, and the task applies the SCD1 transformation correctly.
