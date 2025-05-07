@@ -1,0 +1,50 @@
+-- Step 1: Set Role and Warehouse
+USE ROLE ACCOUNTADMIN;
+USE WAREHOUSE COMPUTE_WH;
+
+-- Step 2: Create Database
+CREATE OR REPLACE DATABASE SCD1_DB;
+
+-- Step 3: Create Storage Integration
+-- Replace STORAGE_AWS_ROLE_ARN and STORAGE_ALLOWED_LOCATIONS with actual values
+CREATE OR REPLACE STORAGE INTEGRATION SCD1_INT
+  TYPE = EXTERNAL_STAGE
+  STORAGE_PROVIDER = 'S3'
+  ENABLED = TRUE
+  STORAGE_AWS_ROLE_ARN = 'arn:aws:iam::your-account-id:role/scd1role'
+  STORAGE_ALLOWED_LOCATIONS = ('s3://your-bucket-name/your-folder/');
+
+-- Step 4: Describe the Integration to Get Required IAM Values
+DESC INTEGRATION SCD1_INT;
+
+-- (Copy STORAGE_AWS_IAM_USER_ARN and STORAGE_AWS_EXTERNAL_ID from output)
+
+-- Step 5: Update AWS IAM Role Trust Policy
+-- (In AWS Console > IAM > Roles > scd1role > Trust relationships > Edit trust policy)
+-- Replace the JSON with the one below:
+-- {
+--   "Version": "2012-10-17",
+--   "Statement": [
+--     {
+--       "Effect": "Allow",
+--       "Principal": {
+--         "AWS": "<STORAGE_AWS_IAM_USER_ARN>"
+--       },
+--       "Action": "sts:AssumeRole",
+--       "Condition": {
+--         "StringEquals": {
+--           "sts:ExternalId": "<STORAGE_AWS_EXTERNAL_ID>"
+--         }
+--       }
+--     }
+--   ]
+-- }
+
+-- Step 6: Create a Stage in Snowflake
+-- Replace the URL with your S3 bucket URI
+CREATE OR REPLACE STAGE SCD1_DB.PUBLIC.SCD1_STAGE
+  STORAGE_INTEGRATION = SCD1_INT
+  URL = 's3://your-bucket-name/your-folder/';
+
+-- Step 7: Verify the Stage
+LS @SCD1_DB.PUBLIC.SCD1_STAGE;
