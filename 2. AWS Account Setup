@@ -1,0 +1,65 @@
+# 2️⃣ AWS Account Setup
+
+### Step 1: Sign Up for AWS
+
+**Visit the AWS Website:**  
+Go to the official AWS website: [AWS Sign Up](https://aws.amazon.com/).
+
+**Click “Create an AWS Account”:**  
+On the homepage, click the **"Create an AWS Account"** button.
+
+**Enter Your Information:**  
+- **Email Address**: Enter your email address.
+- **Password**: Create a secure password.
+- **AWS Account Name**: Choose an account name (e.g., `Your_Account_Name`).
+
+**Agree to the Terms and Conditions:**  
+Review and agree to AWS's terms and conditions.
+
+---
+
+### Step 2: Provide Payment Information
+
+**Enter Payment Details:**  
+- AWS requires a valid credit card for verification purposes, even for the Free Tier.
+- AWS will not charge you unless you exceed the Free Tier limits.
+
+**Billing Address:**  
+Enter your billing address and contact information.
+
+**Verify Payment Information:**  
+AWS may charge a small amount (typically a few dollars) to verify your payment method. This charge will be refunded.
+
+---
+
+### Step 3: Identity Verification
+
+**Verify Your Identity:**  
+- AWS may ask you to verify your identity through a phone call or text message.
+- You will receive a verification code on your phone, which you need to enter to proceed.
+
+---
+
+### Step 4: Select Your Support Plan
+
+**Choose a Support Plan:**  
+- Select the **Basic Support Plan** for free access to AWS support.
+- You can choose a higher-tier plan if you need premium support (this comes at an additional cost).
+
+---
+
+### Step 5: Access Your AWS Management Console
+
+**Sign In to the AWS Console:**  
+Once your account is set up, you can sign in to the **AWS Management Console** at [AWS Console](https://aws.amazon.com/console/).
+
+- Enter your **email address** and **password**.
+- You will be taken to the main dashboard where you can start exploring AWS services.
+
+---
+
+### Step 6: Set Up IAM (Identity and Access Management)
+
+**Create IAM Users (Recommended):**  
+- It's a best practice not to use your root user for everyday tasks. Instead, create **IAM (Identity and Access Management)** users with appropriate permissions.
+- From the AWS Management Console, go to the **IAM Dashboard** and create new users. Assign them necessary roles and permissions.
