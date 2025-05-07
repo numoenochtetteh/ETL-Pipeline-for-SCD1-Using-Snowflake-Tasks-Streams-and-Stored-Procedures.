@@ -1,0 +1,12 @@
+📄 Description: SCD1 Pipeline – Uploading Customer Data to S3
+This script is used as part of the SCD1 (Slowly Changing Dimension Type 1) testing workflow. It automates the process of uploading customer dataset files (customer_full_data.csv and customer_change_data.csv) from your Anaconda environment to an AWS S3 bucket. The uploaded data is then automatically processed by a Snowflake pipeline to reflect updates or inserts into a CUSTOMER table.
+
+🔧 Pre-requisites:
+AWS IAM credentials with access to S3
+
+Anaconda environment with boto3 and yaml installed
+
+Two CSV files: customer_full_data.csv and customer_change_data.csv
+
+Snowflake data pipeline configured to ingest from the S3 location
+
