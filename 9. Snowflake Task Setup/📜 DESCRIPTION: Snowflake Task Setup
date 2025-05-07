@@ -1,0 +1,20 @@
+📜 DESCRIPTION: Snowflake Task Setup
+In this step, we will create a Snowflake Task that automatically runs a Stored Procedure every 1 minute. This stored procedure will execute Slowly Changing Dimension Type 1 (SCD1) logic on the CUSTOMER table.
+
+✅ What We’re Doing:
+Create a target table (CUSTOMER) to store the transformed data.
+
+Write a stored procedure that:
+
+Reads from the CUSTOMER_STREAM.
+
+Loads the data into a temporary work table.
+
+Performs a MERGE to update or insert rows into the target.
+
+Set up a Snowflake Task to run this procedure every minute only if the stream has data.
+
+Activate the task.
+
+This automation is key in a data pipeline — it ensures your dimension table is updated in near real-time whenever new records land in the source.
+
